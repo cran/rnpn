@@ -4,7 +4,7 @@ Description: Programmatic interface to the
     Web Service methods provided by the National 'Phenology' Network
     (<https://usanpn.org/>), which includes data on various life history
     events that occur at specific times.
-Version: 1.1.1
+Version: 1.2.0
 License: MIT + file LICENSE
 Authors@R: c(
     person("Lee", "Marsh", role = c("aut", "cre"), email = "lee@usanpn.org"),
@@ -23,11 +23,11 @@ VignetteBuilder: knitr
 URL: https://docs.ropensci.org/rnpn/ (website)
         https://github.com/ropensci/rnpn/ (devel)
 NeedsCompilation: no
-Packaged: 2020-12-01 20:00:49 UTC; Lee
+Packaged: 2021-03-22 21:53:48 UTC; Lee
 Author: Lee Marsh [aut, cre],
   Scott Chamberlain [aut],
   Alyssa Rosemartin [aut],
   Kevin Wong [aut]
 Maintainer: Lee Marsh <lee@usanpn.org>
 Repository: CRAN
-Date/Publication: 2020-12-02 07:40:02 UTC
+Date/Publication: 2021-03-23 01:00:06 UTC

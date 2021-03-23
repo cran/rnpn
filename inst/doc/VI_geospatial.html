@@ -300,9 +300,6 @@ hr {
 )
 </code></pre>
 
-<pre><code>## [1] &quot;https://geoserver.usanpn.org/geoserver/wcs?service=WCS&amp;version=2.0.1&amp;request=GetCoverage&amp;format=geotiff&amp;coverageId=gdd:agdd_50f&amp;SUBSET=time(\&quot;2019-06-25T00:00:00.000Z\&quot;)&quot;
-</code></pre>
-
 <pre><code class="r">plot(
  AGDDJun2019, 
  main = &quot;AGDD base 50 on June 25th, 2019&quot;
@@ -342,12 +339,7 @@ average_model &lt;- npn_download_geospatial(
  &#39;si-x:average_bloom_best&#39;, 
  &#39;1905-01-01&#39;
 )
-</code></pre>
-
-<pre><code>## [1] &quot;https://geoserver.usanpn.org/geoserver/wcs?service=WCS&amp;version=2.0.1&amp;request=GetCoverage&amp;format=geotiff&amp;coverageId=si-x:average_bloom_best&amp;SUBSET=time(\&quot;1905-01-01T00:00:00.000Z\&quot;)&quot;
-</code></pre>
-
-<pre><code class="r">NAvalue(BESTSIxData1905) &lt;- -9999
+NAvalue(BESTSIxData1905) &lt;- -9999
 </code></pre>
 
 <pre><code class="r">plot(
@@ -368,12 +360,8 @@ average_model &lt;- npn_download_geospatial(
  &#39;climate:tmax&#39;, 
  &#39;2019-05-05&#39;
 )
-</code></pre>
 
-<pre><code>## [1] &quot;https://geoserver.usanpn.org/geoserver/wcs?service=WCS&amp;version=2.0.1&amp;request=GetCoverage&amp;format=geotiff&amp;coverageId=climate:tmax&amp;SUBSET=time(\&quot;2019-05-05T00:00:00.000Z\&quot;)&quot;
-</code></pre>
-
-<pre><code class="r">plot(
+plot(
  daily_max_20190505, 
  main = &quot;Daily Temperature Max (C), May 5th, 2019&quot;
 )
