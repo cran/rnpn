@@ -1,7 +1,7 @@
-ec60ebf9a76b5471517c0aed27fc2900 *DESCRIPTION
+262b522b25e92f78c9c3ae14e472a016 *DESCRIPTION
 bb46991c7e947efee1f0e7cbefe3353f *LICENSE
 0c790b8537494768695f5f5f420f0a63 *NAMESPACE
-db787ec5b4c24745c55624baf52cc6f2 *NEWS.md
+16f0d801c074166ea51b14c5c1381fef *NEWS.md
 2792aaab38314c00b0c0660fad67bccf *R/defunct.R
 435854e186b6179c4d2bd6ce69d3beaa *R/lookup_names.R
 78582ff1ae7c1da51ec14d9159f622e6 *R/npn_data_download.R
@@ -126,7 +126,7 @@ d90f2aa98704cbd3340e36a7e443f67d *tests/fixtures/npn_stations_with_spp_2.yml
 d8f5d873e031f5023f20cfacb225e49b *tests/testthat/helper-rnpn.R
 48272a4231592a85fdccd500d96b8078 *tests/testthat/test-npn-datasets.R
 83949a66dc382e470e22f9beb184155e *tests/testthat/test-npn-defunct.R
-467b979b09f6d929be899ef299ff7725 *tests/testthat/test-npn-geoserver.R
+583f08dfd990e9e70e1528ce7d8551d5 *tests/testthat/test-npn-geoserver.R
 f598a522bf63b070c65b61e0391e85fd *tests/testthat/test-npn-get-species.R
 8772d3e11f45c7f33b8f061d32bbdbff *tests/testthat/test-npn-observations.R
 5ba0ec64fc985bd5382b165a0213ce02 *tests/testthat/test-npn-partners.R
