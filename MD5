@@ -1,7 +1,7 @@
-bfbd67b8159842fb808ca80d3fb0f5ee *DESCRIPTION
+1136e42560ff78aa6d2a2f6ad9ca3790 *DESCRIPTION
 edd23a8a54945bd4013b08acc9fa000a *LICENSE
 c630c0f1e129c4c30f94daccc92069ae *NAMESPACE
-522091c0f0ff9e8126ed64a635316b22 *NEWS.md
+9f166ca26b8b81f77dcb1ffe96bf6b7d *NEWS.md
 fdc31c499ace939a91ec5768ce706937 *R/defunct.R
 f13a56fe77cff612bd8c27111adf2f3a *R/lookup_names.R
 2e5dcc1d82f3fbf8afd76295f9c9e395 *R/npn_data_download.R
@@ -13,8 +13,8 @@ ebfc070e26cfe184c0b50ac332c6d324 *R/npn_partner_groups.R
 f77815546052d5c1eb86a65cc9cc2497 *R/npn_stations.R
 5d66c65c0f5cf87b33a0aabf26f1e828 *R/rnpn-package.R
 23a5940e04344420827bf58875ba9e14 *R/zzz.R
-0ae12f66525142705a760dc4767eabcc *README.md
-2cdf655726feedb74819daba2e70e14b *build/vignette.rds
+18d752f0f383180a5a415aa063b1e496 *README.md
+1b561adfeb9a68f7d2a79c167e7d808f *build/vignette.rds
 1fa487d3586c80dc453bea5cdbc0e5be *inst/doc/III_individual_phenometrics.R
 868371b4d9014eaf103696b2ef14a2ef *inst/doc/III_individual_phenometrics.Rmd
 1588062e201951f0b3a4a4fa5ed66ebc *inst/doc/III_individual_phenometrics.html
@@ -27,6 +27,9 @@ fa1cb9fafe6861f2da62fec1b082922b *inst/doc/IV_site_phenometrics.Rmd
 34fded5e983b5819114d12e06c308a06 *inst/doc/I_introduction.R
 78f450081d4e7004cad402122f28267f *inst/doc/I_introduction.Rmd
 fe64404832919a9edf71be5d09ef885c *inst/doc/I_introduction.html
+2161c829074b7e81f17e1bf3e2a3136e *inst/doc/VIII_data_cleaning.R
+636eec4830cf8760021d56c132c58399 *inst/doc/VIII_data_cleaning.Rmd
+b365963185e69d0b14860401a4c42d7f *inst/doc/VIII_data_cleaning.html
 72981caa0e954eb3b60e07eff6654dce *inst/doc/VII_combine_raster_point.R
 33e01083e9a44fbf19ebf4db70a05fec *inst/doc/VII_combine_raster_point.Rmd
 0b720913a7a4d2bce37fd6f64dbe7476 *inst/doc/VII_combine_raster_point.html
@@ -136,10 +139,16 @@ f6eca34e009c45dd715d659e545157d7 *tests/testthat/test-npn-observations.R
 c776975e7fa30605e6e2a77ebf8ee535 *vignettes/II_status_intensity.Rmd
 fa1cb9fafe6861f2da62fec1b082922b *vignettes/IV_site_phenometrics.Rmd
 78f450081d4e7004cad402122f28267f *vignettes/I_introduction.Rmd
+636eec4830cf8760021d56c132c58399 *vignettes/VIII_data_cleaning.Rmd
 33e01083e9a44fbf19ebf4db70a05fec *vignettes/VII_combine_raster_point.Rmd
 7d05f8a5717ea94a7529aec5c8694de1 *vignettes/VI_geospatial.Rmd
 5488ca0c84705ab1ffdb51b3fbe49bca *vignettes/V_magnitude_phenometrics.Rmd
 65715000c2c91a23dd9de52e0201a422 *vignettes/figures/7-plot.png
+607b43821b214eadf96aa68bf38ddf43 *vignettes/figures/HistogramPriorNo.png
+28d362f3327d4cb70a2deab2a6f922a4 *vignettes/figures/MFY-byPhenophase.png
+942f7e29a4b455c07ea339fc14322aaf *vignettes/figures/RedOak1.png
+e73a996f3fed42659ffa677ad1a1d507 *vignettes/figures/RedOak3.png
+df42bada1b0af04179245b7b0a11c250 *vignettes/figures/conflicts-by-site.png
 c8696ec43e145466ffed6c17276c9fd5 *vignettes/figures/individual-phenometrics.png
 0eb4c3b88d481d05bb1149d938691ed5 *vignettes/figures/magnitude-phenometrics.png
 63ee192a9d0c1a99288291f8a39b8601 *vignettes/figures/site-phenometrics.png
