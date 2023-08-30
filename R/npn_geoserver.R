@@ -24,6 +24,7 @@ npn_get_layer_details <- function(){
   doc.data <- XML::xmlParse(file = doc)
 
   capability.list <- XML::xmlToList(doc.data)[["Capability"]]
+
   layer.list <- capability.list$Layer
   layers <- layer.list[names(layer.list) == "Layer"]
 

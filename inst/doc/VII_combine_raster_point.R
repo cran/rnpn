@@ -2,7 +2,6 @@
 knitr::opts_chunk$set(echo = TRUE)
 library(RColorBrewer)
 library(rnpn)
-library(rgdal)
 library(raster)
 
 ## ----eval=FALSE---------------------------------------------------------------

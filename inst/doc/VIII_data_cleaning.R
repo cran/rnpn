@@ -138,14 +138,11 @@ knitr::include_graphics("figures/RedOak1.png", dpi = NULL,
 #                          group_by(individual_id) %>%
 #                          summarize(Q1 = quantile(first_yes_doy, .25),
 #                                    Q3 = quantile(first_yes_doy, .75),
-#                                    IQR <- IQR(first_yes_doy)))
+#                                    IQR = IQR(first_yes_doy)))
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  df_8Y_Q = df_8Y %>%
 #    right_join(quantiles, by = "individual_id")
-#  
-#  df_8Y_Q  <- df_8Y_Q  %>%
-#    rename('IQR' = 'IQR <- IQR(first_yes_doy)')
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  df_8Y_clean <- subset(
