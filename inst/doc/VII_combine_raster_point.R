@@ -79,6 +79,6 @@ library(raster)
 #  )
 #  
 
-## ---- echo=FALSE, out.width = "50%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "50%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/7-plot.png")
 

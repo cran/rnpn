@@ -31,7 +31,7 @@ library(rnpn)
 #  plot(p + labs(title = "Percent Multi and One Observer Status Conflict by Phenophase")
 #       + scale_y_continuous(labels = scales::percent_format(scale = 100)))
 
-## ---- echo=FALSE, out.width = "75%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "75%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/conflicts-by-site.png", dpi = NULL,
   error = getOption("knitr.graphics.error", TRUE))
 
@@ -63,7 +63,7 @@ knitr::include_graphics("figures/conflicts-by-site.png", dpi = NULL,
 #           na.rm = TRUE)
 #  
 
-## ---- echo=FALSE, out.width = "75%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "75%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/HistogramPriorNo.png", dpi = NULL,
   error = getOption("knitr.graphics.error", TRUE))
 
@@ -99,7 +99,7 @@ knitr::include_graphics("figures/HistogramPriorNo.png", dpi = NULL,
 #  plot(p + labs(title = "Frequency of Multiple First Yeses by Phenophase (Flowering Dogwood, 2021)")
 #       + scale_y_continuous(labels = scales::percent_format(scale = 100)))
 
-## ---- echo=FALSE, out.width = "75%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "75%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/MFY-byPhenophase.png", dpi = NULL,
   error = getOption("knitr.graphics.error", TRUE))
 
@@ -124,7 +124,7 @@ knitr::include_graphics("figures/MFY-byPhenophase.png", dpi = NULL,
 #    cex=2,  cex.axis=1.5, cex.lab=1.5, pch=21
 #  )
 
-## ---- echo=FALSE, out.width = "75%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "75%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/RedOak1.png", dpi = NULL,
   error = getOption("knitr.graphics.error", TRUE))
 
@@ -157,7 +157,7 @@ knitr::include_graphics("figures/RedOak1.png", dpi = NULL,
 #    cex=2,  cex.axis=1.5, cex.lab=1.5, pch=21
 #  )
 
-## ---- echo=FALSE, out.width = "75%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "75%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/RedOak3.png", dpi = NULL,
   error = getOption("knitr.graphics.error", TRUE))
 

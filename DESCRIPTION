@@ -4,7 +4,7 @@ Description: Programmatic interface to the
     Web Service methods provided by the National 'Phenology' Network
     (<https://usanpn.org/>), which includes data on various life history
     events that occur at specific times.
-Version: 1.2.6
+Version: 1.2.7.0
 License: MIT + file LICENSE
 Authors@R: c(
     person("Jeff", "Switzer", role = c("aut", "cre"), email = "jeff@usanpn.org"),
@@ -22,9 +22,10 @@ Suggests: ggplot2, testthat, covr, knitr, markdown, rmarkdown,
 RoxygenNote: 7.2.3
 Encoding: UTF-8
 VignetteBuilder: knitr
-URL: https://github.com/usa-npn/rnpn/ (devel)
+URL: https://github.com/usa-npn/rnpn
+BugReports: https://github.com/usa-npn/rnpn/issues
 NeedsCompilation: no
-Packaged: 2023-08-29 21:24:56 UTC; usanpn
+Packaged: 2024-01-24 23:09:56 UTC; jeff
 Author: Jeff Switzer [aut, cre],
   Scott Chamberlain [aut],
   Lee Marsh [aut],
@@ -33,4 +34,4 @@ Author: Jeff Switzer [aut, cre],
   Eric R Scott [ctb]
 Maintainer: Jeff Switzer <jeff@usanpn.org>
 Repository: CRAN
-Date/Publication: 2023-08-30 09:10:06 UTC
+Date/Publication: 2024-01-25 04:40:02 UTC

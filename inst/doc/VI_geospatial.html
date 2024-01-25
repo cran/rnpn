@@ -120,7 +120,7 @@ table, .body h2 { border-bottom: 1px solid #666; }
 .body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
 .footnote-ref a::before { content: "["; }
 .footnote-ref a::after { content: "]"; }
-.footnotes::before {
+section.footnotes::before {
   content: "";
   display: block;
   max-width: 20em;
@@ -139,12 +139,10 @@ table, .body h2 { border-bottom: 1px solid #666; }
 </style>
 </head>
 <body>
-<div class="include-before">
-</div>
 <div class="frontmatter">
 <div class="title"><h1>VI. USA-NPN Geospatial Data</h1></div>
 <div class="author"><h2>Lee Marsh</h2></div>
-<div class="date"><h3>2023-08-29</h3></div>
+<div class="date"><h3>2024-01-24</h3></div>
 </div>
 <div class="body">
 <h1 id="usa-npn-geospatial-data">USA-NPN Geospatial Data</h1>
@@ -221,23 +219,6 @@ table, .body h2 { border-bottom: 1px solid #666; }
  &quot;2019-06-25&quot;
 )
 </code></pre>
-<pre><code>## Please note that rgdal will be retired during October 2023,
-## plan transition to sf/stars/terra functions using GDAL and PROJ
-## at your earliest convenience.
-## See https://r-spatial.org/r/2023/05/15/evolution4.html and https://github.com/r-spatial/evolution
-## rgdal: version: 1.6-7, (SVN revision 1203)
-## Geospatial Data Abstraction Library extensions to R successfully loaded
-## Loaded GDAL runtime: GDAL 3.5.3, released 2022/10/21
-## Path to GDAL shared files: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library/rgdal/gdal
-##  GDAL does not use iconv for recoding strings.
-## GDAL binary built with GEOS: TRUE 
-## Loaded PROJ runtime: Rel. 9.1.0, September 1st, 2022, [PJ_VERSION: 910]
-## Path to PROJ shared files: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library/rgdal/proj
-## PROJ CDN enabled: FALSE
-## Linking to sp version:1.6-1
-## To mute warnings of possible GDAL/OSR exportToProj4() degradation,
-## use options(&quot;rgdal_show_exportToProj4_warnings&quot;=&quot;none&quot;) before loading sp or rgdal.
-</code></pre>
 <pre><code class="language-r">plot(
  AGDDJun2019, 
  main = &quot;AGDD base 50 on June 25th, 2019&quot;
@@ -302,8 +283,6 @@ plot(
  main = &quot;MODIS Median Mid-Greenup, 2001 - 2017&quot;
 )
 </code></pre>
-</div>
-<div class="include-after">
 </div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>

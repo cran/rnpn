@@ -32,7 +32,7 @@ library(rnpn)
 #    ylim=c(0,1)
 #  )
 
-## ---- echo=FALSE, out.width = "50%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "50%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/magnitude-phenometrics.png")
 
 

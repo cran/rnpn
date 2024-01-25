@@ -26,6 +26,6 @@ library(rnpn)
 #    ylim=c(0,200)
 #  )
 
-## ---- echo=FALSE, out.width = "50%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "50%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/site-phenometrics.png")
 

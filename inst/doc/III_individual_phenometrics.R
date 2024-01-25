@@ -39,6 +39,6 @@ library(rnpn)
 #    pch=21
 #  )
 
-## ---- echo=FALSE, out.width = "50%", fig.pos="h"------------------------------
+## ----echo=FALSE, out.width = "50%", fig.pos="h"-------------------------------
 knitr::include_graphics("figures/individual-phenometrics.png")
 
