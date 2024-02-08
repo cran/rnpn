@@ -1,5 +1,12 @@
 # rnpn (development version)
 
+rnpn 1.2.8 (2024-02-08)
+=======================
+
+### NEW FEATURES
+
+* Fixed failed tests due to server migration
+
 rnpn 1.2.7 (2024-01-23)
 =======================
 
