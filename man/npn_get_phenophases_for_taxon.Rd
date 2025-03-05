@@ -15,33 +15,58 @@ npn_get_phenophases_for_taxon(
 )
 }
 \arguments{
-\item{family_ids}{List of taxonomic family ids to search for.}
+\item{family_ids}{Integer vector of taxonomic family ids to search for.}
 
-\item{order_ids}{List of taxonomic order ids to search for.}
+\item{order_ids}{Integer vector of taxonomic order ids to search for.}
 
-\item{class_ids}{List of taxonomic class ids to search for}
+\item{class_ids}{Integer vector of taxonomic class ids to search for}
 
-\item{genus_ids}{List of taxonomic genus ids to search for}
+\item{genus_ids}{Integer vector of taxonomic genus ids to search for}
 
-\item{date}{Specify the date of interest. For this function to return anything, either this value must be set of return_all must be 1.}
+\item{date}{Specify the date of interest. For this function to return
+anything, either this value must be set or \code{return_all} must be \code{1}.}
 
-\item{return_all}{Takes either 0 or 1 as input and defaults to 0. For this function to return anything, either this value must be set to 1
-or date must be set.}
+\item{return_all}{Takes either \code{0} or \code{1} as input and defaults to \code{0}. For
+this function to return anything, either this value must be set to \code{1} or
+\code{date} must be set.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Currently unused.}
 }
 \value{
-A data frame listing phenophases in the NPN database for the specified taxon and date.
+A data frame listing phenophases in the NPN database for the
+specified taxon and date.
 }
 \description{
-This function gets a list of phenophases that are applicable for a provided taxonomic grouping, e.g. family, order.
-Note that since a higher taxononmic order will aggregate individual species not every phenophase returned through this
-function will be applicable for every species belonging to that taxonomic group.
+This function gets a list of phenophases that are applicable for a provided
+taxonomic grouping, e.g. family, order. Note that since a higher taxononmic
+order will aggregate individual species not every phenophase returned through
+this function will be applicable for every species belonging to that
+taxonomic group.
 }
 \details{
-It's also important to note that phenophase definitions can change for individual species over time, so there's a need
-to specify either a date of interest, or to explicitly state that the function should return all phenophases that were
-ever applicable for any species belonging to the specified taxonomic group.
+It's also important to note that phenophase definitions can change for
+individual species over time, so there's a need to specify either a date of
+interest, or to explicitly state that the function should return all
+phenophases that were ever applicable for any species belonging to the
+specified taxonomic group.
 
-When called, this function requires of these three parameters, exactly one of family_ids, order_ids or class_ids to be set.
+When called, this function requires of these three parameters, exactly one of
+\code{family_ids}, \code{order_ids} or \code{class_ids} to be set.
+}
+\examples{
+\dontrun{
+npn_get_phenophases_for_taxon(class_ids = c(5, 6), date = "2018-05-05")
+npn_get_phenophases_for_taxon(family_ids = c(267, 268), date = "2018-05-05")
+
+#if you supply two or more "ids" arguments, the highest classification takes precedence
+pheno <- npn_get_phenophases_for_taxon(
+  class_ids = 4,
+  family_ids = c(103, 104),
+  genus_ids = c(409, 957, 610),
+  date = "2018-05-05"
+)
+
+colnames(pheno)
+# [1] "family_id"   "family_name" "phenophases"
+}
 }

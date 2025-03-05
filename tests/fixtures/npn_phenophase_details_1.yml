@@ -1,0 +1,28 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://services.usanpn.org/npn_portal/phenophases/getPhenophaseDetails.json?ids=56
+    body:
+      encoding: ''
+      string: ''
+    headers: []
+  response:
+    status:
+      status_code: 200
+      message: OK
+    headers:
+      date: Wed, 20 Nov 2024 19:11:26 GMT
+      content-type: application/json
+      content-length: '164'
+      server: Apache/2.4.62 () PHP/5.5.38
+      x-powered-by: PHP/5.5.38
+      access-control-allow-origin: '*'
+      access-control-allow-headers: origin, x-requested-with, content-type
+      access-control-allow-methods: PUT, GET, POST, DELETE, OPTIONS
+    body:
+      encoding: ''
+      file: no
+      string: '[{"phenophase_id":56,"phenophase_description":"First leaf (3 locations)","definition_ids":"''56''","phenophase_names":"First
+        leaf","phenophase_revision_comments":""}]'
+  recorded_at: 2024-11-20 19:11:26 GMT
+  recorded_with: vcr/1.6.0, webmockr/1.0.0

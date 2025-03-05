@@ -3,52 +3,56 @@
 #' Get a list of all stations, optionally filtered by state
 #'
 #' @export
-#' @param state_code The postal code of the US state by which to filter
-#' the results returned. Leave empty to get all stations.
-#' @template curl
-#' @return A data frame with stations' latitude and longitude, names, and ids.
+#' @param state_code The postal code of the US state by which to filter the
+#'   results returned. Leave empty to get all stations.
+#' @param ... Currently unused.
+#' @returns A data frame with stations' latitude and longitude, names, and ids.
 #' @examples \dontrun{
 #' npn_stations()
 #' npn_stations('AZ')
 #' }
+npn_stations <- function(state_code = NULL, ...) {
+  req <-
+    base_req %>%
+    httr2::req_url_path_append('stations/getAllStations.json')
 
-npn_stations <- function(state_code=NULL, ...) {
-  end_point <- 'stations/getAllStations.json'
-  if(!is.null(state_code)){
-    tt <- lapply(state_code, function(z){
-      npn_GET(paste0(base(), end_point), list(state_code = z), TRUE, ...)
+  if (!is.null(state_code)) {
+    state_code <- rlang::arg_match(state_code, datasets::state.abb, multiple = TRUE)
+    reqs <- lapply(state_code, function(x) {
+      httr2::req_url_query(req, state_code = x)
     })
-    ldfply(tt)
-  }else{
-    tibble::as_tibble(
-      npn_GET(paste0(base(), end_point), list(), TRUE, ...)
-    )
+    resps <- httr2::req_perform_sequential(reqs)
+    tt <- lapply(resps, function(x) {
+      httr2::resp_body_json(x, simplifyVector = TRUE)
+    })
+    out <- dplyr::bind_rows(tt)
+  } else {
+    resp <- httr2::req_perform(req)
+    out <- httr2::resp_body_json(resp, simplifyVector = TRUE)
   }
-}
 
+  #return:
+  tibble::as_tibble(out)
+}
 
 
 #' Get number of stations by state.
 #'
 #' @export
-#' @template curl
-#' @return A data frame listing stations by state.
+#' @param ... Currently unused.
+#' @returns A data frame listing stations by state.
 #' @examples \dontrun{
-#' head( npn_stations_by_state() )
+#' head(npn_stations_by_state())
 #' }
 npn_stations_by_state <- function(...) {
-  tt <- npn_GET(paste0(base(), 'stations/getStationCountByState.json'), list(), ...)
-  states <- sapply(tt, function(x){
-    if (is.null(x[[1]]) == TRUE) {
-      x[[1]] <- "emptyvalue"
-    } else{
-      x[[1]] <- x[[1]]
-    }
-  })
-  data <- sapply(tt, "[[", "number_stations")
-  structure(
-    data.frame(states, data, stringsAsFactors = FALSE),
-    .Names = c("state", "number_stations"))
+  req <- base_req %>%
+    httr2::req_url_path_append('stations/getStationCountByState.json')
+  resp <- httr2::req_perform(req)
+  out <- httr2::resp_body_json(resp, simplifyVector = TRUE)
+  #Note: this function previously sanitized NULL values to "emptyvalue", but now
+  #they are automatically coerced to NAs by httr2.  I think that's ok
+  #return:
+  tibble::as_tibble(out)
 }
 
 #' Get station data based on a WKT defined geography.
@@ -57,32 +61,26 @@ npn_stations_by_state <- function(...) {
 #' stations, including unique IDs, within that boundary.
 #'
 #' @export
-#' @template curl
 #' @param wkt Required field specifying the WKT geography to use.
-#' @return A data frame listing stations filtered based on the WKT geography.
+#' @param ... Currently unused.
+#' @returns A data frame listing stations filtered based on the WKT geography.
 #' @examples \dontrun{
-#' head( npn_stations_by_state(wkt="POLYGON((
+#' head(npn_stations_by_state(wkt = "POLYGON((
 #' -110.94484396954107 32.23623109416672,-110.96166678448247 32.23594069208043,
 #' -110.95960684795904 32.21328646993733,-110.94244071026372 32.21343170728929,
 #' -110.93935080547857 32.23216538049456,-110.94484396954107 32.23623109416672))")
 #' )
 #' }
-npn_stations_by_location <- function( wkt, ...){
-
-  end_point <- 'stations/getStationsByLocation.json'
-  if(!is.null(wkt)){
-
-    tt <- lapply(wkt, function(z){
-      npn_GET(paste0(base(), end_point), list("wkt" = wkt), TRUE, ...)
-    })
-    ldfply(tt)
-
-  }else{
-    tibble::as.tibble(
-      npn_GET(paste0(base(), end_point), list(), TRUE, ...)
-    )
-  }
-
+npn_stations_by_location <- function(wkt, ...) {
+  #TODO: check if wkt is valid with something like wk package?
+  req <- base_req %>%
+    httr2::req_url_path_append('stations/getStationsByLocation.json') %>%
+    httr2::req_url_query(wkt = wkt)
+  resp <- httr2::req_perform(req)
+  #TODO: capture `response_message` and convert to error? E.g. if wkt = "hello"
+  resp %>%
+    httr2::resp_body_json(simplifyVector = TRUE) %>%
+    tibble::as_tibble()
 }
 
 
@@ -93,19 +91,24 @@ npn_stations_by_location <- function( wkt, ...){
 #'
 #' @export
 #' @param speciesid Required. Species id numbers, from 1 to infinity, potentially,
-#'    use e.g., c(52, 53, etc.) if more than one species desired (numeric).
-#' @template curl
-#' @return A data frame with stations' latitude and longitude, names, and ids.
+#'    use e.g., `c(52, 53)` if more than one species desired (numeric).
+#' @param ... Currently unused.
+#' @returns A data frame with stations' latitude and longitude, names, and ids.
 #' @examples \dontrun{
-#' npn_stations_with_spp(speciesid = c(52,53,54))
+#' npn_stations_with_spp(speciesid = c(52, 53, 54))
 #' npn_stations_with_spp(speciesid = 53)
 #' }
 
 npn_stations_with_spp <- function(speciesid, ...) {
-  args <- list()
-  for (i in seq_along(speciesid)) {
-    args[paste0('species_id[',i,']')] <- speciesid[i]
-  }
-  ldfply(npn_GET(paste0(base(), 'stations/getStationsWithSpecies.json'), args, ...))
+  #TODO this doesn't work with speciesid = 3 (and possibly others) for some reason
+  #https://github.com/usa-npn/rnpn/issues/38
+  req <- base_req %>%
+    httr2::req_url_path_append('stations/getStationsWithSpecies.json') %>%
+    httr2::req_url_query(!!!explode_query("species_id", speciesid))
+  resp <- httr2::req_perform(req)
+  out <- httr2::resp_body_json(resp, simplifyVector = TRUE)
+
+  #return:
+  tibble::as_tibble(out)
 }
 

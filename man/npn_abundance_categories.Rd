@@ -7,12 +7,19 @@
 npn_abundance_categories(...)
 }
 \arguments{
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Currently unused.}
 }
 \value{
-A data frame listing all abundance/intensity categories and their corresponding values.
+A data frame listing all abundance/intensity categories and their
+corresponding values.
 }
 \description{
 Gets data on all abundance/intensity categories and includes a data frame of
 applicable abundance/intensity values for each category
+}
+\examples{
+\dontrun{
+ac <- npn_abundance_categories()
+}
+
 }

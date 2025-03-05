@@ -7,23 +7,24 @@
 npn_lookup_names(name, type = "genus", fuzzy = FALSE)
 }
 \arguments{
-\item{name}{A scientific or common name}
+\item{name}{A scientific or common name.}
 
-\item{type}{One of common_name, genus, or species}
+\item{type}{One of \code{"common_name"}, \code{"genus"}, or \code{"species"}.}
 
-\item{fuzzy}{One of TRUE or FALSE, if FALSE, uses fuzzy search via agrep, if
-FALSE, uses grep.}
+\item{fuzzy}{Logical; if \code{TRUE}, uses fuzzy search via \code{\link[=agrep]{agrep()}}, if
+\code{FALSE}, uses \code{\link[=grep]{grep()}}.}
 }
 \value{
-A data frame with species ID numbers based on the name and type parameters.
+A data frame with species ID numbers based on the name and type
+parameters.
 }
 \description{
 Look up species IDs by taxonomic or common name
 }
 \examples{
 \dontrun{
-npn_lookup_names(name='Pinus', type='genus')
-npn_lookup_names(name='pine', type='common_name')
-npn_lookup_names(name='bird', type='common_name', fuzzy=TRUE)
+npn_lookup_names(name = 'Pinus', type = 'genus')
+npn_lookup_names(name = 'pine', type = 'common_name')
+npn_lookup_names(name = 'bird', type = 'common_name', fuzzy = TRUE)
 }
 }

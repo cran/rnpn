@@ -9,7 +9,7 @@ npn_stations_by_location(wkt, ...)
 \arguments{
 \item{wkt}{Required field specifying the WKT geography to use.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Currently unused.}
 }
 \value{
 A data frame listing stations filtered based on the WKT geography.
@@ -20,7 +20,7 @@ stations, including unique IDs, within that boundary.
 }
 \examples{
 \dontrun{
-head( npn_stations_by_state(wkt="POLYGON((
+head(npn_stations_by_state(wkt = "POLYGON((
 -110.94484396954107 32.23623109416672,-110.96166678448247 32.23594069208043,
 -110.95960684795904 32.21328646993733,-110.94244071026372 32.21343170728929,
 -110.93935080547857 32.23216538049456,-110.94484396954107 32.23623109416672))")

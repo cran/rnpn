@@ -22,51 +22,72 @@ npn_species_search(
 )
 }
 \arguments{
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Currently unused.}
 
-\item{ids}{List of species ids for which to retrieve information}
+\item{ids}{Integer vector of species ids for which to retrieve information.}
 
 \item{state}{A US postal state code to filter results.}
 
-\item{kingdom}{Filters results by taxonomic kingdom. Takes either 'Animalia' or 'Plantae'.}
+\item{kingdom}{Filters results by taxonomic kingdom. Valid values include
+\code{'Animalia'}, \code{'Plantae'}.}
 
-\item{network}{filter species based on a list of unique identifiers of NPN groups that are actually observing data on the species. Takes a list of IDs}
+\item{network}{filter species based on identifiers of NPN groups that are
+actually observing data on the species. Takes a single numeric ID.}
 
-\item{start_date}{filter species by date observed. This sets the start date of the date range and must be used in conjunction with end_date}
+\item{start_date}{filter species by date observed. This sets the start date
+of the date range and must be used in conjunction with \code{end_date}.}
 
-\item{end_date}{filter species by date observed. This sets the end date of the date range and must be used in conjunction with start_date}
+\item{end_date}{filter species by date observed. This sets the end date of
+the date range and must be used in conjunction with \code{start_date}.}
 
-\item{station_id}{filter species by a list of unique site identifiers}
+\item{station_id}{filter species by a numeric vector of unique site
+identifiers.}
 }
 \value{
-A data frame with information on species in the NPN database and their IDs.
+A tibble with information on species in the NPN database and their
+IDs.
 
-A data frame with information on species in the NPN database and their IDs, filtered by the species ID parameter.
+A tibble with information on species in the NPN database and their
+IDs, filtered by the species ID parameter.
 
-A data frame with information on species in the NPN database whose distribution includes a given state.
+A tibble with information on species in the NPN database whose
+distribution includes a given state.
 
-A data frame with information on species in the NPN database filtered by partner group, dates and station/site IDs.
+A tibble with information on species in the NPN database filtered by
+partner group, dates and station/site IDs.
 }
 \description{
-Returns a complete list of all species information of species represented in the NPN
-database.
+Returns a complete list of all species information of species represented in
+the NPN database.
 
-Returns information about a species based on the NPN's unique ID for that species
+Returns information about a species based on the NPN's unique ID for that
+species
 
 Search for species by state
 
-Search NPN species information using a number of different parameters, which can be used in conjunction with one another, including:
- - Species on which a particular group or groups are actually collecting data
- - What species were observed in a given date range
- - What species were observed at a particular station or stations
+Search NPN species information using a number of different parameters, which
+can be used in conjunction with one another, including:
+\itemize{
+\item Species on which a particular group or groups are actually collecting data
+\item What species were observed in a given date range
+\item What species were observed at a particular station or stations
+}
 }
 \examples{
 \dontrun{
 npn_species()
+}
+\dontrun{
 npn_species_id(ids = 3)
 }
 \dontrun{
 npn_species_state(state = "AZ")
 npn_species_state(state = "AZ", kingdom = "Plantae")
+}
+\dontrun{
+species <- npn_species_search(
+  start_date = "2013-01-01",
+  end_date = "2013-05-15"
+)
 }
 }

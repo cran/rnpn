@@ -7,11 +7,17 @@
 npn_phenophase_definitions(...)
 }
 \arguments{
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Currently unused.}
 }
 \value{
-A data frame listing all phenophases in the NPN database and their definitions.
+A tibble listing all phenophases in the NPN database and their
+definitions.
 }
 \description{
 Retrieves a complete list of all phenophase definitions.
+}
+\examples{
+\dontrun{
+pp <- npn_phenophase_definitions()
+}
 }

@@ -18,16 +18,34 @@ npn_get_data(
 \arguments{
 \item{url}{The URL of the service endpoint to request data from}
 
-\item{download_path}{String, optional file path to the file for which to output the results.}
+\item{download_path}{String, optional file path to the file for which to
+output the results.}
 
-\item{always_append}{Boolean flag. When set to true, then we always append data to the download path. This is used
-in the case of npn_get_data_by_year where we're making multiple requests to the same service and aggregating all
-data results in a single file. Without this flag, otherwise, each call to the service would truncate the output file.}
+\item{always_append}{Boolean flag. When set to \code{TRUE}, then we always append
+data to the download path. This is used in the case of
+\code{\link[=npn_get_data_by_year]{npn_get_data_by_year()}} where we're making multiple requests to the same
+service and aggregating all data results in a single file. Without this
+flag, otherwise, each call to the service would truncate the output file.}
 }
 \value{
-Data table of the requested data. NULL if a download_path was specified.
+A tibble of the requested data. If a \code{download_path} was specified,
+the file path is returned.
 }
 \description{
 Generic utility function for querying data from the NPN data services.
+}
+\examples{
+\dontrun{
+npn_get_data(
+  url = "https://services.usanpn.org/npn_portal//observations/getObservations.ndjson?",
+  query = list(
+    request_src = "Unit\%20Test",
+    climate_data = "0",
+    `species_id[1]` = "6",
+    start_date = "2010-01-01",
+    end_date = "2010-12-31"
+  )
+)
+}
 }
 \keyword{internal}
