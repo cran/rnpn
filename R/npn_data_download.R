@@ -79,41 +79,43 @@
 #'   instead.
 #' @export
 #' @examples \dontrun{
-#' #Download all saguaro data for 2016
+#' #Download all saguaro data for 2015 and 2016
 #' npn_download_status_data(
 #'   request_source = "Your Name or Org Here",
-#'   years = c(2016),
-#'   species_id = c(210),
+#'   years = c(2015, 2016),
+#'   species_id = 210,
 #'   download_path = "saguaro_data_2016.csv"
 #' )
 #' }
-npn_download_status_data = function(request_source,
-                                    years,
-                                    coords = NULL,
-                                    species_ids = NULL,
-                                    genus_ids = NULL,
-                                    family_ids = NULL,
-                                    order_ids = NULL,
-                                    class_ids = NULL,
-                                    station_ids = NULL,
-                                    species_types = NULL,
-                                    network_ids = NULL,
-                                    states = NULL,
-                                    phenophase_ids = NULL,
-                                    functional_types = NULL,
-                                    additional_fields = NULL,
-                                    climate_data = FALSE,
-                                    ip_address = NULL,
-                                    dataset_ids = NULL,
-                                    email = NULL,
-                                    download_path = NULL,
-                                    six_leaf_layer = FALSE,
-                                    six_bloom_layer = FALSE,
-                                    agdd_layer = NULL,
-                                    six_sub_model = NULL,
-                                    additional_layers = NULL,
-                                    pheno_class_ids = NULL,
-                                    wkt = NULL) {
+npn_download_status_data = function(
+  request_source,
+  years,
+  coords = NULL,
+  species_ids = NULL,
+  genus_ids = NULL,
+  family_ids = NULL,
+  order_ids = NULL,
+  class_ids = NULL,
+  station_ids = NULL,
+  species_types = NULL,
+  network_ids = NULL,
+  states = NULL,
+  phenophase_ids = NULL,
+  functional_types = NULL,
+  additional_fields = NULL,
+  climate_data = FALSE,
+  ip_address = NULL,
+  dataset_ids = NULL,
+  email = NULL,
+  download_path = NULL,
+  six_leaf_layer = FALSE,
+  six_bloom_layer = FALSE,
+  agdd_layer = NULL,
+  six_sub_model = NULL,
+  additional_layers = NULL,
+  pheno_class_ids = NULL,
+  wkt = NULL
+) {
   query <- npn_get_common_query_vars(
     request_source,
     coords,
@@ -209,36 +211,38 @@ npn_download_status_data = function(request_source,
 #'   download_path = "saguaro_data_2013_2014.csv"
 #' )
 #' }
-npn_download_individual_phenometrics <- function(request_source,
-                                                 years,
-                                                 period_start = "01-01",
-                                                 period_end = "12-31",
-                                                 coords = NULL,
-                                                 individual_ids = NULL,
-                                                 species_ids = NULL,
-                                                 station_ids = NULL,
-                                                 species_types = NULL,
-                                                 network_ids = NULL,
-                                                 states = NULL,
-                                                 phenophase_ids = NULL,
-                                                 functional_types = NULL,
-                                                 additional_fields = NULL,
-                                                 climate_data = FALSE,
-                                                 ip_address = NULL,
-                                                 dataset_ids = NULL,
-                                                 genus_ids = NULL,
-                                                 family_ids = NULL,
-                                                 order_ids = NULL,
-                                                 class_ids = NULL,
-                                                 pheno_class_ids = NULL,
-                                                 email = NULL,
-                                                 download_path = NULL,
-                                                 six_leaf_layer = FALSE,
-                                                 six_bloom_layer = FALSE,
-                                                 agdd_layer = NULL,
-                                                 six_sub_model = NULL,
-                                                 additional_layers = NULL,
-                                                 wkt = NULL) {
+npn_download_individual_phenometrics <- function(
+  request_source,
+  years,
+  period_start = "01-01",
+  period_end = "12-31",
+  coords = NULL,
+  individual_ids = NULL,
+  species_ids = NULL,
+  station_ids = NULL,
+  species_types = NULL,
+  network_ids = NULL,
+  states = NULL,
+  phenophase_ids = NULL,
+  functional_types = NULL,
+  additional_fields = NULL,
+  climate_data = FALSE,
+  ip_address = NULL,
+  dataset_ids = NULL,
+  genus_ids = NULL,
+  family_ids = NULL,
+  order_ids = NULL,
+  class_ids = NULL,
+  pheno_class_ids = NULL,
+  email = NULL,
+  download_path = NULL,
+  six_leaf_layer = FALSE,
+  six_bloom_layer = FALSE,
+  agdd_layer = NULL,
+  six_sub_model = NULL,
+  additional_layers = NULL,
+  wkt = NULL
+) {
   query <- npn_get_common_query_vars(
     request_source = request_source,
     coords = coords,
@@ -354,38 +358,40 @@ npn_download_individual_phenometrics <- function(request_source,
 #'   download_path = "saguaro_data_2013_2014.csv"
 #' )
 #' }
-npn_download_site_phenometrics <- function(request_source,
-                                           years,
-                                           period_start = "01-01",
-                                           period_end = "12-31",
-                                           num_days_quality_filter = "30",
-                                           coords = NULL,
-                                           species_ids = NULL,
-                                           genus_ids = NULL,
-                                           family_ids = NULL,
-                                           order_ids = NULL,
-                                           class_ids = NULL,
-                                           pheno_class_ids = NULL,
-                                           station_ids = NULL,
-                                           species_types = NULL,
-                                           network_ids = NULL,
-                                           states = NULL,
-                                           phenophase_ids = NULL,
-                                           functional_types = NULL,
-                                           additional_fields = NULL,
-                                           climate_data = FALSE,
-                                           ip_address = NULL,
-                                           dataset_ids = NULL,
-                                           email = NULL,
-                                           download_path = NULL,
-                                           six_leaf_layer = FALSE,
-                                           six_bloom_layer = FALSE,
-                                           agdd_layer = NULL,
-                                           six_sub_model = NULL,
-                                           additional_layers = NULL,
-                                           taxonomy_aggregate = NULL,
-                                           pheno_class_aggregate = NULL,
-                                           wkt = NULL) {
+npn_download_site_phenometrics <- function(
+  request_source,
+  years,
+  period_start = "01-01",
+  period_end = "12-31",
+  num_days_quality_filter = "30",
+  coords = NULL,
+  species_ids = NULL,
+  genus_ids = NULL,
+  family_ids = NULL,
+  order_ids = NULL,
+  class_ids = NULL,
+  pheno_class_ids = NULL,
+  station_ids = NULL,
+  species_types = NULL,
+  network_ids = NULL,
+  states = NULL,
+  phenophase_ids = NULL,
+  functional_types = NULL,
+  additional_fields = NULL,
+  climate_data = FALSE,
+  ip_address = NULL,
+  dataset_ids = NULL,
+  email = NULL,
+  download_path = NULL,
+  six_leaf_layer = FALSE,
+  six_bloom_layer = FALSE,
+  agdd_layer = NULL,
+  six_sub_model = NULL,
+  additional_layers = NULL,
+  taxonomy_aggregate = NULL,
+  pheno_class_aggregate = NULL,
+  wkt = NULL
+) {
   query <- npn_get_common_query_vars(
     request_source = request_source,
     coords = coords,
@@ -429,9 +435,6 @@ npn_download_site_phenometrics <- function(request_source,
     )
   )
 }
-
-
-
 
 
 #' Download Magnitude Phenometrics
@@ -493,31 +496,33 @@ npn_download_site_phenometrics <- function(request_source,
 #'   download_path="saguaro_data_2013.csv"
 #' )
 #' }
-npn_download_magnitude_phenometrics <- function(request_source,
-                                                years,
-                                                period_frequency = "30",
-                                                coords = NULL,
-                                                species_ids = NULL,
-                                                genus_ids = NULL,
-                                                family_ids = NULL,
-                                                order_ids = NULL,
-                                                class_ids = NULL,
-                                                pheno_class_ids = NULL,
-                                                station_ids = NULL,
-                                                species_types = NULL,
-                                                network_ids = NULL,
-                                                states = NULL,
-                                                phenophase_ids = NULL,
-                                                functional_types = NULL,
-                                                additional_fields = NULL,
-                                                climate_data = FALSE,
-                                                ip_address = NULL,
-                                                dataset_ids = NULL,
-                                                email = NULL,
-                                                download_path = NULL,
-                                                taxonomy_aggregate = NULL,
-                                                pheno_class_aggregate = NULL,
-                                                wkt = NULL) {
+npn_download_magnitude_phenometrics <- function(
+  request_source,
+  years,
+  period_frequency = "30",
+  coords = NULL,
+  species_ids = NULL,
+  genus_ids = NULL,
+  family_ids = NULL,
+  order_ids = NULL,
+  class_ids = NULL,
+  pheno_class_ids = NULL,
+  station_ids = NULL,
+  species_types = NULL,
+  network_ids = NULL,
+  states = NULL,
+  phenophase_ids = NULL,
+  functional_types = NULL,
+  additional_fields = NULL,
+  climate_data = FALSE,
+  ip_address = NULL,
+  dataset_ids = NULL,
+  email = NULL,
+  download_path = NULL,
+  taxonomy_aggregate = NULL,
+  pheno_class_aggregate = NULL,
+  wkt = NULL
+) {
   query <- npn_get_common_query_vars(
     request_source,
     coords,
@@ -557,7 +562,6 @@ npn_download_magnitude_phenometrics <- function(request_source,
   )
   return(data)
 }
-
 
 
 #' Get Data By Year
@@ -632,17 +636,19 @@ npn_download_magnitude_phenometrics <- function(request_source,
 #'   period_end = "09-30"
 #' )
 #' }
-npn_get_data_by_year <- function(endpoint,
-                                 query,
-                                 years,
-                                 period_start = "01-01",
-                                 period_end = "12-31",
-                                 download_path = NULL,
-                                 six_leaf_layer = FALSE,
-                                 six_bloom_layer = FALSE,
-                                 agdd_layer = NULL,
-                                 six_sub_model = NULL,
-                                 additional_layers = NULL) {
+npn_get_data_by_year <- function(
+  endpoint,
+  query,
+  years,
+  period_start = "01-01",
+  period_end = "12-31",
+  download_path = NULL,
+  six_leaf_layer = FALSE,
+  six_bloom_layer = FALSE,
+  agdd_layer = NULL,
+  six_sub_model = NULL,
+  additional_layers = NULL
+) {
   #validate period start and end
   validate_mmdd(period_start)
   validate_mmdd(period_end)
@@ -676,17 +682,28 @@ npn_get_data_by_year <- function(endpoint,
 
       if (isTRUE(six_leaf_layer)) {
         six_leaf_raster <-
-          resolve_six_raster(year = year,
-                             phenophase =  "leaf",
-                             sub_model = six_sub_model)
+          resolve_six_raster(
+            year = year,
+            phenophase = "leaf",
+            sub_model = six_sub_model
+          )
       }
 
       if (isTRUE(six_bloom_layer)) {
         six_bloom_raster <-
-          resolve_six_raster(year =  year,
-                             phenophase = "bloom",
-                             sub_model = six_sub_model)
+          resolve_six_raster(
+            year = year,
+            phenophase = "bloom",
+            sub_model = six_sub_model
+          )
       }
+
+      # TODO: perhaps instead of using npn_get_data() in a loop, a better option
+      # might be to construct a list of requests and then perform them
+      # iteratively or in parallel with req_perform_iterative() ro
+      # req_perform_parallel(). Then the same wrangling could be applied to one
+      # year or a collection of years of data either in memory or streaming from
+      # ndjson saved to a temporarly file on disk
 
       # We also have to generate a unique URL on each request to account
       # for the changes in the start/end date
@@ -706,13 +723,14 @@ npn_get_data_by_year <- function(endpoint,
       # returned data. The data doesn't have to be combined if there was
       # no previous iteration / the results were empty
       if (!is.null(data) && is.null(download_path)) {
+        first_year <- FALSE
         if (!is.null(all_data)) {
           all_data <- dplyr::bind_rows(all_data, data)
         } else {
           all_data <- data
         }
       }
-      if (!is.null(data)) {
+      if (!is.null(data) && !is.null(download_path) && file.exists(data)) {
         first_year <- FALSE
       }
     }
@@ -723,8 +741,6 @@ npn_get_data_by_year <- function(endpoint,
     return(download_path)
   }
 }
-
-
 
 
 #' Download NPN Data
@@ -757,48 +773,70 @@ npn_get_data_by_year <- function(endpoint,
 #'   )
 #' )
 #' }
-npn_get_data <- function(endpoint,
-                         query,
-                         download_path = NULL,
-                         always_append = FALSE,
-                         six_leaf_raster = NULL,
-                         six_bloom_raster = NULL,
-                         agdd_layer = NULL,
-                         additional_layers = NULL) {
-
-  if (is.null(download_path)) { #use JSON
+npn_get_data <- function(
+  endpoint,
+  query,
+  download_path = NULL,
+  always_append = FALSE,
+  six_leaf_raster = NULL,
+  six_bloom_raster = NULL,
+  agdd_layer = NULL,
+  additional_layers = NULL
+) {
+  if (is.null(download_path)) {
+    #use JSON
     endpoint <- sub("(?<=\\.)\\w+$", "json", endpoint, perl = TRUE)
-  } else { #use NDJSON
+  } else {
+    #use NDJSON
     endpoint <- sub("(?<=\\.)\\w+$", "ndjson", endpoint, perl = TRUE)
   }
 
   req <- base_req %>%
     httr2::req_url_path_append(endpoint) %>%
-    # httr2::req_progress(type = "down") %>% #doesn't work—only for file downloads
     httr2::req_method("POST") %>%
-    httr2::req_body_form(!!!query)
+    httr2::req_body_form(!!!query) %>%
+    httr2::req_progress() #adds progress bar for long downloads
 
   #define data wrangling function to be run on entire df or by chunks of 5000
   #rows
   wrangle_dl_data <- function(df) {
     df <- df %>%
+      dplyr::as_tibble() %>% #important to handle empty list
+      # handle some columns that may be read in as the wrong type if they happen
+      # to be all NAs (#87, #107). `any_of()` is used because not all endpoints
+      # will return these columns!
       dplyr::mutate(
-        dplyr::across(dplyr::where(is.numeric),
-                      function(x) ifelse(x == -9999, NA_real_, x))
-      ) %>%
-      dplyr::mutate(
-        dplyr::across(dplyr::where(is.character),
-                      function(x) ifelse(x == "-9999", NA_character_, x))
-      ) %>%
-      #handle some columns that may be read in as the wrong type if they happen
-      #to be all NAs (#87). `any_of()` is used because not all endpoints will
-      #return these columns!
-      dplyr::mutate(
-        dplyr::across(dplyr::any_of("update_datetime"),
-                      function(x) as.POSIXct(x, tz = "UTC")),
-        dplyr::across(dplyr::any_of(c("intensity_value", "abundance_value")),
-                      as.character)
-      )
+        dplyr::across(
+          dplyr::any_of("update_datetime"),
+          function(x) {
+            x <- dplyr::if_else(x == -9999, NA, x)
+            as.POSIXct(x, tz = "UTC")
+          }
+        ),
+        dplyr::across(
+          dplyr::any_of(c(
+            "partner_group",
+            "species_category",
+            "lifecycle_duration",
+            "growth_habit",
+            "usda_plants_symbol",
+            "observers_status_conflict_flag",
+            "dataset_id",
+            "intensity_value",
+            "observation_comments",
+            "status_conflict_related_records",
+            "multiple_firsty_individual_ids",
+            "observer_status_conflict_flag_individual_ids",
+            "in-phase_search_method",
+            "in-phase_per_hr_search",
+            "state",
+            #sometimes get parsed as numeric:
+            "intensity_value",
+            "abundance_value"
+          )),
+          as.character
+        )
+      ) 
 
     # Reconcile all the points in the frame with the SIX leaf raster,
     # if it's been requested.
@@ -831,26 +869,31 @@ npn_get_data <- function(endpoint,
         date_col <- "observation_date"
       } else if ("mean_first_yes_doy" %in% colnames(df)) {
         df$cal_date <-
-          as.Date(df[, "mean_first_yes_doy"],
-                  origin = paste0(df[, "mean_first_yes_year"], "-01-01")) - 1
+          as.Date(
+            df[, "mean_first_yes_doy"],
+            origin = paste0(df[, "mean_first_yes_year"], "-01-01")
+          ) -
+          1
         date_col <- "cal_date"
       } else if ("first_yes_day" %in% colnames(df)) {
         df$cal_date <-
-          as.Date(df[, "first_yes_doy"],
-                  origin = paste0(df[, "first_yes_year"], "-01-01")) - 1
+          as.Date(
+            df[, "first_yes_doy"],
+            origin = paste0(df[, "first_yes_year"], "-01-01")
+          ) -
+          1
         date_col <- "cal_date"
       }
 
       pt_values <-
-        apply(df[, c('latitude', 'longitude', date_col)], 1,
-              function(x) {
-                rnpn::npn_get_agdd_point_data(
-                  layer = agdd_layer,
-                  lat = as.numeric(x['latitude']),
-                  long = as.numeric(x['longitude']),
-                  date = x[date_col]
-                )
-              })
+        apply(df[, c('latitude', 'longitude', date_col)], 1, function(x) {
+          rnpn::npn_get_agdd_point_data(
+            layer = agdd_layer,
+            lat = as.numeric(x['latitude']),
+            long = as.numeric(x['longitude']),
+            date = x[date_col]
+          )
+        })
       pt_values <-
         tibble::as_tibble_col(pt_values, column_name = agdd_layer)
       df <- cbind(df, pt_values)
@@ -859,6 +902,24 @@ npn_get_data <- function(endpoint,
         df$cal_date <- NULL
       }
     }
+
+    df <- df %>%
+      dplyr::mutate(
+        dplyr::across(
+          #numeric columns except datetimes
+          c(dplyr::where(\(x) is.double(x)), -dplyr::matches("update_datetime")),
+          function(x) dplyr::if_else(x == -9999, NA_real_, x)
+        ),
+        dplyr::across(
+          c(dplyr::where(is.integer), -dplyr::matches("update_datetime")),
+          function(x) dplyr::if_else(x == -9999, NA_integer_, x)
+        ),
+        dplyr::across(
+          dplyr::where(is.character),
+          function(x) dplyr::if_else(x == "-9999", NA_character_, x)
+        )
+      )
+
     return(tibble::as_tibble(df))
   }
   path <- withr::local_tempfile()
@@ -868,30 +929,39 @@ npn_get_data <- function(endpoint,
   # assume that memory could be a limitation and wrangle data 5000 rows at a
   # time and append to the CSV file specified in `download_path`
   if (is.null(download_path)) {
-    dtm <-
-      httr2::resp_body_json(resp, simplifyVector = TRUE) %>%
-      wrangle_dl_data()
+    dtm <- httr2::resp_body_json(resp, simplifyVector = TRUE)
+    # If dtm is an empty list because there are no records, convert it into an
+    # empty tibble
+    if (is.null(dim(dtm))) {
+      dtm <- dplyr::tibble()
+      message(paste0("No records in ", substring(query$start_date, 1, 4)))
+    } else {
+      dtm <- wrangle_dl_data(dtm)
+    }
     return(dtm)
   } else {
     #resp$body is a path to an .ndjson file
     i <- 0
     resp$body %>%
       file() %>%
-      jsonlite::stream_in(handler = function(df) {
-        df <- wrangle_dl_data(df)
-        if (nrow(df) > 0) {
-          write.table(
-            df,
-            download_path,
-            append = !(i == 0 && isFALSE(always_append)),
-            sep = ",",
-            eol = "\n",
-            row.names = FALSE,
-            col.names = i == 0 && isFALSE(always_append)
-          )
-          i <<- i + 1
-        }
-      }, pagesize = 5000)
+      jsonlite::stream_in(
+        handler = function(df) {
+          df <- wrangle_dl_data(df)
+          if (nrow(df) > 0) {
+            write.table(
+              df,
+              download_path,
+              append = !(i == 0 && isFALSE(always_append)),
+              sep = ",",
+              eol = "\n",
+              row.names = FALSE,
+              col.names = i == 0 && isFALSE(always_append)
+            )
+            i <<- i + 1
+          }
+        },
+        pagesize = 5000
+      )
     return(download_path)
   }
 }
@@ -955,14 +1025,21 @@ npn_get_common_query_vars <- function(
     species_ids = NULL
   }
 
+  if (!(is.logical(climate_data) & length(climate_data) == 1)) {
+    stop("`climate_data` must be `TRUE` or `FALSE`")
+  }
+
   if (!is.null(wkt)) {
-    station_ids_shape <- tryCatch({
-      shape_stations <- npn_stations_by_location(wkt)
-      station_ids_shape <- shape_stations$station_id
-    }, error = function(msg) {
-      print("Unable to filter by shape file.")
-      print(msg)
-    })
+    station_ids_shape <- tryCatch(
+      {
+        shape_stations <- npn_stations_by_location(wkt)
+        station_ids_shape <- shape_stations$station_id
+      },
+      error = function(msg) {
+        print("Unable to filter by shape file.")
+        print(msg)
+      }
+    )
 
     if (!is.null(station_ids)) {
       station_ids <- c(station_ids, station_ids_shape)
@@ -974,26 +1051,23 @@ npn_get_common_query_vars <- function(
   query <- c(
     list(
       request_src = URLencode(request_source),
-      #TODO change to something like
-      # if(!is.null(climate_data)) climate_data <- as.integer(climate_data)
-      # this *might* break things if it is important that climate_date = 0 always
-      climate_data = (if (climate_data) "1" else "0")
+      climate_data = as.integer(climate_data) #convert from logical
     ),
     # All these variables take a multiplicity of possible parameters, this will help put them all together.
-    npn_createArgList("species_id", species_ids),
-    npn_createArgList("station_id", station_ids),
-    npn_createArgList("species_type", species_types),
-    npn_createArgList("network_id", network_ids),
-    npn_createArgList("dataset_ids", dataset_ids),
-    npn_createArgList("state", states),
-    npn_createArgList("phenophase_id", phenophase_ids),
-    npn_createArgList("functional_type", functional_types),
-    npn_createArgList("additional_field", additional_fields),
-    npn_createArgList("genus_id", genus_ids),
-  	npn_createArgList("family_id", family_ids),
-    npn_createArgList("order_id", order_ids),
-  	npn_createArgList("class_id", class_ids),
-    npn_createArgList("pheno_class_id", pheno_class_ids)
+    explode_query("species_id", species_ids),
+    explode_query("station_id", station_ids),
+    explode_query("species_type", species_types),
+    explode_query("network_id", network_ids),
+    explode_query("dataset_ids", dataset_ids),
+    explode_query("state", states),
+    explode_query("phenophase_id", phenophase_ids),
+    explode_query("functional_type", functional_types),
+    explode_query("additional_field", additional_fields),
+    explode_query("genus_id", genus_ids),
+    explode_query("family_id", family_ids),
+    explode_query("order_id", order_ids),
+    explode_query("class_id", class_ids),
+    explode_query("pheno_class_id", pheno_class_ids)
   )
 
   if (!is.null(coords) && length(coords) == 4) {
@@ -1024,4 +1098,3 @@ npn_get_common_query_vars <- function(
 
   return(query)
 }
-

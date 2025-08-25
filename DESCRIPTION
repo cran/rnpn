@@ -1,6 +1,6 @@
 Package: rnpn
 Title: Interface to the National 'Phenology' Network 'API'
-Version: 1.4.0
+Version: 1.4.1
 Authors@R: c(
     person("Jeff", "Switzer", , "jeff@usanpn.org", role = c("aut", "cre")),
     person("Scott", "Chamberlain", role = "aut"),
@@ -16,7 +16,7 @@ Description: Programmatic interface to the Web Service methods provided by
 License: MIT + file LICENSE
 URL: https://github.com/usa-npn/rnpn, http://usa-npn.github.io/rnpn/
 BugReports: https://github.com/usa-npn/rnpn/issues
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.1.0)
 Imports: dplyr, httr2 (>= 1.1.0), jsonlite, lifecycle, magrittr, rlang,
         tibble, tidyr, xml2
 Suggests: covr, ggplot2, knitr, markdown, RColorBrewer, rmarkdown, sf,
@@ -26,13 +26,13 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-03-25 20:43:55 UTC; jeff
+Packaged: 2025-08-25 02:11:11 UTC; jeff
 Author: Jeff Switzer [aut, cre],
   Scott Chamberlain [aut],
   Lee Marsh [aut],
   Kevin Wong [aut],
-  Eric R Scott [aut] (<https://orcid.org/0000-0002-7430-7879>),
+  Eric R Scott [aut] (ORCID: <https://orcid.org/0000-0002-7430-7879>),
   David LeBauer [ctb]
 Maintainer: Jeff Switzer <jeff@usanpn.org>
 Repository: CRAN
-Date/Publication: 2025-03-25 21:00:05 UTC
+Date/Publication: 2025-08-25 02:50:02 UTC

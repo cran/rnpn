@@ -1,12 +1,26 @@
+# rnpn 1.4.1
+
+* -9999 is now converted to `NA` for all columns in data returned by `npn_download_*()` functions (#119, #121).
+* compatibility with vcr v2.0.0 (fixed in #125 by @skott)
+
+## Bug fixes
+
+* fixed bug that caused some `npn_download_*()` functions to error when sections of the data were `NA` (#107 reported by @ezylstra)
+* Fixed a bug where returned value of `npn_get_point_data()` was inconsistent depending on whether it was cached or not (same bug and solution as #42)
+* Fixed a bug in data download functions that errored uniformatively if no data was returned.  Now an empty tibble is returned.
+
+
 # rnpn 1.4.0
 
 ## New features
 
 * `npn_download_individual_phenometrics()` and `npn_download_site_phenometrics()` gain `period_start` and `period_end` arguments for defining a custom "window" or season for phenometrics.
 
-## Deprcations
+## Deprcations & changes
 
 * The `speciesid` argument of `npn_stations_with_spp()` has been deprecated in favor of `species_id` for uniformity.
+* Changed behavior of `kingdom` arguments in `npn_species_state()` and `npn_species_types()`.  Now provide either `"Plantae"`, `"Animalia"`, or `c("Plantae", "Animalia")` (the default). A column for `kingdom` is added to the return value of `npn_species_types()`.
+* The `return_all` argument of `npn_get_phenophases_for_taxon()` has been deprecated.  Use `date = "all"` to return data for all dates instead. `return_all = 1` will continue to work (with a warning) in this version.
 
 ## Bug fixes
 
